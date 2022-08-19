@@ -1,10 +1,14 @@
 triggers:
   cron: "@weekly"
 builders:
-  - docker
+  - script
+script:
+  - "echo \"no op job\""
 
 extra_jobs:
   - name: docker-mongo-5.0
+    builders:
+      - docker
     docker_name: "library/mongo"
     docker_tags:
       - 5.0
