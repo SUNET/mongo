@@ -1,0 +1,12 @@
+triggers:
+  cron: "@weekly"
+builders:
+  - docker
+
+extra_jobs:
+  - name: docker-mongo-5.0
+    docker_name: "library/mongo"
+    docker_tags:
+      - 5.0
+    docker_context_dir: 5.0
+    docker_skip_tag_as_latest: true
